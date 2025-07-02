@@ -1,5 +1,8 @@
 import random
 import time 
+import gui
+
+
 
 def sentence_extract():
     list_sentence = [] 
@@ -12,7 +15,7 @@ def sentence_extract():
 
 def sentence_select():
     sentence = sentence_extract()
-    random_number = random.randint(0,10)
+    random_number = random.randint(0,14)
     return sentence[random_number]        
 
 def user_input():
@@ -55,8 +58,10 @@ def word_accuracy(original,user,start,end):
 
 def display(accuracy,time,words_per_min):
     print(f'\nAccuracy : {accuracy}')
-    print(f'Time Taken : {time}')
+    print(f'Time Taken : {time} s')
     print(f'WPM : {words_per_min}')
+
+
 
 
 original , user , start , end = user_input()

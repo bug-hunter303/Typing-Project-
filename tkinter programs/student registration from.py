@@ -1,12 +1,12 @@
 import tkinter as tk 
-from tkinter import messagebox
+from tkinter import messagebox,ttk # theme tkinter 
 
 root = tk.Tk()
 
 def submit_click():
     name , mobile , email = name_textbox.get() , mobile_textbox.get() , email_textbox.get()
-    
-    if name and email and mobile:
+    branch = branch_dropdown.get()
+    if name and email and mobile and branch:
         messagebox.showinfo("Status","Data Submitted")
     else:
         messagebox.showwarning("Empty Field Exists","Fill the fields")
@@ -33,8 +33,20 @@ mobile_textbox.pack(anchor=tk.W , padx=10)
 mobile_textbox = tk.Entry(root)
 mobile_textbox.pack(anchor=tk.W , padx=10)
 
+
+choices = ['CS','Economy','Mechanics']
+
+branch_dropdown = tk.Label(root, text="Option")
+branch_dropdown.pack(anchor=tk.W , padx= 10)
+branch_dropdown = ttk.Combobox(root,values=choices)
+branch_dropdown.pack(anchor=tk.W, padx=10)
+
+
+
 submit_button = tk.Button(root , text='Submit' , command= submit_click) # no submit_click() cause only after the user clicks the submit the function runs 
 submit_button.pack(anchor=tk.W , padx=10 , pady=10)
+
+
 
 
 
