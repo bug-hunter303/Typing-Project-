@@ -1,9 +1,4 @@
-
-import time
 import random
-
-
-
 def sentence_extract():
     list_sentence = [] 
 
