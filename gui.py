@@ -31,7 +31,7 @@ def on_enter(event = None):
                  f"Time Taken: {stats['elapsed_time']} seconds"
         )
 
-    user_entry.delete(0,'end')
+    # user_entry.delete(0,'end')
     first_key = True
     start_time = None
     
