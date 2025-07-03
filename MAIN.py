@@ -1,7 +1,7 @@
 import Sentences
 import customtkinter as ctk
 import time 
-import calculation
+import Calculation
 
 start_time = None
 first_key = True
@@ -23,7 +23,7 @@ def on_enter(event = None):
     if start_time is not None:
         elapsed_time = round(end_time - start_time , 2)
 
-        stats = calculation.calculations(original_sentence,user_input,elapsed_time)
+        stats = Calculation.calculations(original_sentence,user_input,elapsed_time)
 
         result_label.configure(
             text=f"Accuracy: {stats['accuracy']}%\n"

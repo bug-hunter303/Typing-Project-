@@ -1,6 +1,6 @@
 import random
 import time 
-import gui
+import MAIN
 
 
 
