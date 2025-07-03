@@ -9,9 +9,9 @@ original_sentence = Sentences.sentence_select()
 
 def first_key(event = None):
     global start_time , first_key
-    if not first_key:
+    if first_key:
         start_time = time.time()
-        first_key = True
+        first_key = False
 
 
 def on_enter(event = None):
@@ -24,7 +24,13 @@ def on_enter(event = None):
         elapsed_time = round(end_time - start_time , 2)
 
         stats = calculation.calculations(original_sentence,user_input,elapsed_time)
-    
+
+        result_label.configure(
+            text=f"Accuracy: {stats['accuracy']}%\n"
+                 f"WPM: {stats['wpm']}\n"
+                 f"Time Taken: {stats['elapsed_time']} seconds"
+        )
+
     user_entry.delete(0,'end')
     first_key = True
     start_time = None
