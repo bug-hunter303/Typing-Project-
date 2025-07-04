@@ -7,7 +7,7 @@ start_time = None
 first_key = True
 original_sentence = Sentences.sentence_select()
 
-def first_key(event = None):
+def first_keyy(event = None):
     global start_time , first_key
     if first_key:
         start_time = time.time()
@@ -53,7 +53,7 @@ input.pack(pady=10)
 user_entry = ctk.CTkEntry(master=root, placeholder_text="Start Typing...",text_color='yellow' , font=('Arial',20),width=450)
 user_entry.pack()
 
-user_entry.bind("<Key>",first_key)
+user_entry.bind("<Key>",first_keyy)
 user_entry.bind("<Return>",on_enter)
 
 result_label = ctk.CTkLabel(root, text="", font=("Arial", 16), wraplength=400)
